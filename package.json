@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "@nlpjs/basic": "^4.27.0",
+    "puppeteer": "^22.4.1",
+    "sentiment": "^5.0.2",
+    "youtube-captions-scraper-x": "^1.1.1",
+    "youtube-transcript": "^1.0.6"
+  },
+  "type": "module",
+  "name": "sa",
+  "version": "1.0.0",
+  "main": "sa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
