@@ -1,9 +1,12 @@
-function sa(msg) {
+import { pipeline, AutoTokenizer } from '@xenova/transformers';
 
-const {SentimentAnalyzer} = require('node-nlp');
+async function sa(msg) {
 
-const sentiment = new SentimentAnalyzer({ language: 'en' });
+    let pipe = await pipeline('sentiment-analysis');
 
-return sentiment.getSentiment(msg)['score'];
+    let out = await pipe(msg);
 
-}
+    console.log(out)
+
+};
+

@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "@nlpjs/basic": "^4.27.0",
-    "puppeteer": "^22.4.1",
+    "puppeteer": "^22.13.0",
     "sentiment": "^5.0.2",
     "youtube-captions-scraper-x": "^1.1.1",
     "youtube-transcript": "^1.0.6"

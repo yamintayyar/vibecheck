@@ -1,12 +1,7 @@
 import puppeteer from 'puppeteer';
-import Sentiment from 'sentiment';
 
-var sentiment = new Sentiment();
-var options = {
-  extras: {
-    '[ __ ]' : -5
-  }
-}; //transcript will not include swears, let each one count for -10 points
+//NOTE: caption algorithm will not retrieve swears; may need to find workaround / different
+//method of getting caption
 
 const caption = async (id) => {
 
@@ -23,19 +18,15 @@ const caption = async (id) => {
 
     console.log("pg loaded, url = " + page.url());
 
-    const captions = await page.evaluate( async () => {
+    const captions = await page.evaluate( async () => { //gives captions
         const txt = getTextWithSpaces(document.getElementById("demo"));
         return Promise.resolve(txt);
-    });    
+    });  
+
     console.log(captions);    
-
-    var sa = sentiment.analyze(captions);
-    var comp =  sa['comparative']; //gets comparative score between -5,5
-    var sc = sa['score'];
-
-    //console.log('score = ' + sc + ', comp score = ' + comp);
-    console.log(sa);
 
     await browser.close();    
 
 };
+
+caption('A5ucvNAENjU');
